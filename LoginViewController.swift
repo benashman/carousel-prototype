@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var fieldParentView: UIView!
@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.delegate = self
         scrollView.contentSize = CGSize(width: 320, height: 600)
         
         // Register for keyboard events
@@ -36,16 +37,25 @@ class LoginViewController: UIViewController {
     }
 
     func keyboardWillShow(notification: NSNotification!) {
-        print("keyboard will show!")
-        
         let maximumContentOffsetY = scrollView.contentSize.height - scrollView.frame.size.height
         
         buttonParentView.transform = CGAffineTransformMakeTranslation(0, -110)
         
         scrollView.contentOffset.y = maximumContentOffsetY
+        scrollView.scrollEnabled = true
     }
 
     func keyboardWillHide(notification: NSNotification!) {
-        print("keyboard will hide")
+        buttonParentView.transform = CGAffineTransformIdentity
+        scrollView.contentOffset.y = 0
+        scrollView.scrollEnabled = false
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let keyboardVisibleThreshold = CGFloat(75.0)
+        
+        if scrollView.contentOffset.y <= keyboardVisibleThreshold {
+            view.endEditing(true)
+        }
     }
 }
