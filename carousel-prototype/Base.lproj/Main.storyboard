@@ -96,7 +96,7 @@
         <!--Sign in to Dropbox-->
         <scene sceneID="RM7-Oe-4Wp">
             <objects>
-                <viewController id="ojW-ec-8tQ" sceneMemberID="viewController">
+                <viewController id="ojW-ec-8tQ" customClass="LoginViewController" customModule="carousel_prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pkx-kd-tVs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,6 +151,14 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1iI-T3-7Z6" userLabel="back_button">
+                                <rect key="frame" x="13" y="25" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="ojW-ec-8tQ" eventType="touchUpInside" id="GXn-AC-Aht"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
