@@ -37,6 +37,12 @@ class LoginViewController: UIViewController {
 
     func keyboardWillShow(notification: NSNotification!) {
         print("keyboard will show!")
+        
+        let maximumContentOffsetY = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        buttonParentView.transform = CGAffineTransformMakeTranslation(0, -110)
+        
+        scrollView.contentOffset.y = maximumContentOffsetY
     }
 
     func keyboardWillHide(notification: NSNotification!) {
