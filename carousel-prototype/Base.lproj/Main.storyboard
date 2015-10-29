@@ -60,7 +60,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="efd-Zx-jMK">
-                                        <rect key="frame" x="80" y="307" width="161" height="21"/>
+                                        <rect key="frame" x="80" y="302" width="161" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -86,6 +86,7 @@
                         <outlet property="photo5" destination="umA-bc-EVt" id="jnU-6k-C1M"/>
                         <outlet property="photo6" destination="5J5-XN-NVW" id="GGk-pN-Y5W"/>
                         <outlet property="scrollView" destination="rSO-FP-0Yx" id="HRq-Ba-lC4"/>
+                        <outlet property="swipePromptLabel" destination="efd-Zx-jMK" id="pjF-kn-cX7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

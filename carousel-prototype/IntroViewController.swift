@@ -20,6 +20,8 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var photo5: UIImageView!
     @IBOutlet weak var photo6: UIImageView!
     
+    @IBOutlet weak var swipePromptLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +40,6 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        print(scrollView.contentOffset)
         
         let yOffsets : [Float] = [-295, -410, -510, -290, -430, -515]
         let xOffsets : [Float] = [-65, 95, -105, 40, 0, -120]
@@ -50,6 +51,8 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         
         let scrollMin = CGFloat(-20)
         let scrollMax = CGFloat(568)
+        
+        swipePromptLabel.alpha = convertValue(scrollView.contentOffset.y, r1Min: scrollMin, r1Max: scrollMax / 2, r2Min: 1, r2Max: 0)
         
         // PHOTO 1
         
