@@ -14,6 +14,9 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var fieldParentView: UIView!
     @IBOutlet weak var buttonParentView: UIView!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,36 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
 
     @IBAction func didTapBackButton(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func didTapSignInButton(sender: AnyObject) {
+        let dummyEmail = "hello@benashman.me"
+        let dummyPassword = "averysecurepassword"
+        
+        if emailField.text == "" || passwordField.text == "" {
+            // Empty fields
+            let missingCredentialsAlertController = UIAlertController(title: "You missed something", message: "Please enter your email and password", preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+            missingCredentialsAlertController.addAction(cancelAction)
+            presentViewController(missingCredentialsAlertController, animated: true, completion: nil)
+        } else {
+            spinner.startAnimating()
+            
+            delay(2.0) {
+                if self.emailField.text == dummyEmail && self.passwordField.text == dummyPassword {
+                    print("success!")
+                } else {
+                    // Unsuccessful login
+                    print("nope!")
+                    let unsuccessfulAlertController = UIAlertController(title: "Something is wrong", message: "Email or password is incorrect", preferredStyle: .Alert)
+                    let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+                    unsuccessfulAlertController.addAction(cancelAction)
+                    self.presentViewController(unsuccessfulAlertController, animated: true, completion: nil)
+                }
+                
+                self.spinner.stopAnimating()
+            }
+        }
     }
 
     func keyboardWillShow(notification: NSNotification!) {
