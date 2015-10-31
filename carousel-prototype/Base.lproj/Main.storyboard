@@ -403,7 +403,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <connections>
-                                    <segue destination="97K-TC-RpZ" kind="modal" modalTransitionStyle="flipHorizontal" id="gW9-Rh-pKC"/>
+                                    <action selector="didTapSignOutButton:" destination="GVP-5o-HVd" eventType="touchUpInside" id="Z28-TU-bZD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -413,6 +413,7 @@
                     <connections>
                         <outlet property="imageView" destination="UGY-1k-Sri" id="m7N-ac-9Ez"/>
                         <outlet property="scrollView" destination="Dg2-39-x93" id="C0A-Yo-dA9"/>
+                        <segue destination="97K-TC-RpZ" kind="modal" identifier="signOut" modalTransitionStyle="flipHorizontal" id="nmW-Dl-235"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3Q-k0-NfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
