@@ -300,6 +300,7 @@
                                     </imageView>
                                 </subviews>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zf6-M8-kcQ" userLabel="settingsButton">
                                 <rect key="frame" x="0.0" y="18" width="52" height="47"/>
@@ -395,6 +396,14 @@
                                 <animations/>
                                 <connections>
                                     <action selector="didTapCloseButton:" destination="GVP-5o-HVd" eventType="touchUpInside" id="I9m-NC-Pxg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MB9-fd-EZ3">
+                                <rect key="frame" x="0.0" y="480" width="320" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="97K-TC-RpZ" kind="modal" modalTransitionStyle="flipHorizontal" id="gW9-Rh-pKC"/>
                                 </connections>
                             </button>
                         </subviews>
