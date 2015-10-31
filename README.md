@@ -11,8 +11,8 @@ Time spent: ~6 hours
   * [x] Upon tapping the Sign In button.
     * [x] If the username or password fields are empty, user sees an error alert.
     * [x] If credentials are incorrect, user sees a loading indicator for 2 seconds followed by an error alert.
-    * [ ] If the credentials are correct, user sees a loading indicator for 2 seconds followed by a transition to the Sign In screens.
-  * [ ] Optional: When the keyboard is visible, if the user pulls down on the scrollview, it will dismiss the keyboard.
+    * [x] If the credentials are correct, user sees a loading indicator for 2 seconds followed by a transition to the Sign In screens.
+  * [x] Optional: When the keyboard is visible, if the user pulls down on the scrollview, it will dismiss the keyboard.
   * [ ] Optional: On appear, scale the form up and fade it in.
 * [ ] Optional: Create a Dropbox
   * [ ] Optional: Tapping in the form reveals the keyboard and shifts the scrollview and "Create a Dropbox" button up.
@@ -20,9 +20,9 @@ Time spent: ~6 hours
   * [ ] Optional: Tapping on Terms shows a webview with the terms.
   * [ ] Optional: User is taken to the tutorial screens upon tapping the "Create a Dropbox" button.
 * [ ] Tutorial Screens
-  * [ ] User can page between the screens
-  * [ ] Optional: User can page between the screens with updated dots
-  * [ ] Optional: Upon reaching the 4th page, hide the dots and show the "Take Carousel for a Spin" button.
+  * [x] User can page between the screens
+  * [x] Optional: User can page between the screens with updated dots
+  * [x] Optional: Upon reaching the 4th page, hide the dots and show the "Take Carousel for a Spin" button.
 * [ ] Image Timeline
   * [ ] Display a scrollable view of images.
   * [ ] User can tap on the conversations button to see the conversations screen (push).
