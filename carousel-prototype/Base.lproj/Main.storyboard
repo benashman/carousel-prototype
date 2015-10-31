@@ -252,7 +252,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <connections>
-                                    <segue destination="Ehs-Zg-Msw" kind="modal" modalTransitionStyle="flipHorizontal" id="yXe-ln-CJS"/>
+                                    <segue destination="J3A-MI-U1u" kind="modal" modalTransitionStyle="flipHorizontal" id="yXe-ln-CJS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -321,6 +321,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3vk-am-EFz"/>
                     <connections>
                         <outlet property="conversationsButton" destination="BIX-8S-TSa" id="Pzi-2z-Ka1"/>
                         <outlet property="imageView" destination="WZF-WC-mp9" id="f56-Q6-6HY"/>
@@ -330,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFL-Hh-mRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="329"/>
+            <point key="canvasLocation" x="3179" y="329"/>
         </scene>
         <!--Conversations View Controller-->
         <scene sceneID="hoR-wb-yhj">
@@ -339,6 +340,21 @@
                     <view key="view" contentMode="scaleToFill" id="OXd-5M-OAK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="conversations" id="lt7-de-pEA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="W65-Bd-3RS">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="didTapBackButton:" destination="nRS-MC-p6E" eventType="touchUpInside" id="dUa-ui-TcS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -346,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNC-sp-Csv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3189" y="329"/>
+            <point key="canvasLocation" x="3613" y="329"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="GBc-fc-hRp">
@@ -361,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3Q-k0-NfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2768" y="-347"/>
+            <point key="canvasLocation" x="3179" y="-353"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FPC-sR-UMc">
@@ -383,9 +399,29 @@
             </objects>
             <point key="canvasLocation" x="173" y="329"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xlt-zh-nxd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="J3A-MI-U1u" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7M9-0e-6VF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ehs-Zg-Msw" kind="relationship" relationship="rootViewController" id="WmO-dE-DMO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBY-pJ-XGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2768" y="329"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backup_button" width="280" height="48"/>
+        <image name="conversations" width="320" height="568"/>
         <image name="feed" width="320" height="1564"/>
         <image name="feed_nav" width="320" height="65"/>
         <image name="intro" width="320" height="1136"/>
