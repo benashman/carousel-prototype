@@ -10,6 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var navBar: UIImageView!
+    @IBOutlet weak var introText: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var fieldParentView: UIView!
     @IBOutlet weak var buttonParentView: UIView!
@@ -17,7 +19,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +29,40 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         // Register for keyboard events
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let transform = CGAffineTransformMakeScale(0.5, 0.5)
+        
+        // Set default states
+        navBar.transform = transform
+        navBar.alpha = 0
+        
+        introText.transform = transform
+        introText.alpha = 0
+        
+        fieldParentView.transform = transform
+        fieldParentView.alpha = 0
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let duration = 0.5
+        let damping = CGFloat(0.9)
+        let velocity = CGFloat(18)
+        let options = UIViewAnimationOptions.CurveEaseOut
+        
+        UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: options, animations: {
+                self.navBar.transform = CGAffineTransformIdentity
+                self.navBar.alpha = 1
+                
+                self.introText.transform = CGAffineTransformIdentity
+                self.introText.alpha = 1
+                
+                self.fieldParentView.transform = CGAffineTransformIdentity
+                self.fieldParentView.alpha = 1
+            },
+            completion: nil
+        )
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,7 +13,7 @@ Time spent: ~6 hours
     * [x] If credentials are incorrect, user sees a loading indicator for 2 seconds followed by an error alert.
     * [x] If the credentials are correct, user sees a loading indicator for 2 seconds followed by a transition to the Sign In screens.
   * [x] Optional: When the keyboard is visible, if the user pulls down on the scrollview, it will dismiss the keyboard.
-  * [ ] Optional: On appear, scale the form up and fade it in.
+  * [x] Optional: On appear, scale the form up and fade it in.
 * [ ] Optional: Create a Dropbox
   * [ ] Optional: Tapping in the form reveals the keyboard and shifts the scrollview and "Create a Dropbox" button up.
   * [ ] Optional: Tapping the Agree to Terms checkbox selects the checkbox.
