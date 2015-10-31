@@ -10,6 +10,10 @@ import UIKit
 
 class LearnMoreViewController: UIViewController {
 
+    var didViewPhotoFullScreen: Bool = false
+    var didUseTimeWheel: Bool = false
+    var didSharePhoto: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
