@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
             
             delay(2.0) {
                 if self.emailField.text == dummyEmail && self.passwordField.text == dummyPassword {
-                    print("success!")
+                    self.performSegueWithIdentifier("signIn", sender: self)
                 } else {
                     // Unsuccessful login
                     print("nope!")
