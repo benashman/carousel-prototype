@@ -12,7 +12,8 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageIndicator: UIPageControl!
-
+    @IBOutlet weak var getStartedButton: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +21,8 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSizeMake(1280, 568)
         scrollView.frame = CGRectMake(0, 0, 320, 568)
         scrollView.showsHorizontalScrollIndicator = false
+        
+        getStartedButton.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +33,19 @@ class TutorialViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let currentPage = Int(round(scrollView.contentOffset.x / 320))
         pageIndicator.currentPage = currentPage
+        
+        let duration = 0.5
+        if currentPage == 3 {
+            UIView.animateWithDuration(duration, animations: {
+                self.pageIndicator.alpha = 0
+                self.getStartedButton.alpha = 1
+            })
+        } else {
+            UIView.animateWithDuration(duration / 2, animations: {
+                self.pageIndicator.alpha = 1
+                self.getStartedButton.alpha = 0
+            })
+        }
     }
     
 }
