@@ -40,6 +40,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        let photos: [UIImageView] = [photo1, photo2, photo3, photo4, photo5, photo6]
         
         let yOffsets : [Float] = [-295, -410, -510, -290, -430, -515]
         let xOffsets : [Float] = [-65, 95, -105, 40, 0, -120]
@@ -52,224 +53,42 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         let scrollMin = CGFloat(-20)
         let scrollMax = CGFloat(568)
         
+        // Transform photos
+        for (i, photo) in photos.enumerate() {
+            photo.transform = CGAffineTransformMakeTranslation(
+                convertValue(scrollView.contentOffset.y,
+                    r1Min: scrollMin,
+                    r1Max: scrollMax,
+                    r2Min: CGFloat(xOffsets[i]),
+                    r2Max: 0),
+                convertValue(scrollView.contentOffset.y,
+                    r1Min: scrollMin,
+                    r1Max: scrollMax,
+                    r2Min: CGFloat(yOffsets[i]),
+                    r2Max: 0))
+            
+            photo.transform = CGAffineTransformScale(photo.transform,
+                convertValue(scrollView.contentOffset.y,
+                    r1Min: scrollMin,
+                    r1Max: scrollMax,
+                    r2Min: CGFloat(scales[i]),
+                    r2Max: 1),
+                convertValue(scrollView.contentOffset.y,
+                    r1Min: scrollMin,
+                    r1Max: scrollMax,
+                    r2Min: CGFloat(scales[i]),
+                    r2Max: 1))
+            
+            photo.transform = CGAffineTransformRotate(photo.transform,
+                convertValue(scrollView.contentOffset.y,
+                    r1Min: scrollMin,
+                    r1Max: scrollMax,
+                    r2Min: CGFloat(rotations[i]),
+                    r2Max: 0) * CGFloat(M_PI / 180))
+        }
+        
+        // Fade out swipe prompt
         swipePromptLabel.alpha = convertValue(scrollView.contentOffset.y, r1Min: scrollMin, r1Max: scrollMax / 2, r2Min: 1, r2Max: 0)
-        
-        // PHOTO 1
-        
-        // position
-        photo1.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(xOffsets[0]),
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(yOffsets[0]),
-                r2Max: 0))
-        
-        // scale
-        photo1.transform = CGAffineTransformScale(photo1.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[0]),
-                r2Max: 1),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[0]),
-                r2Max: 1))
-        
-        // rotation
-        photo1.transform = CGAffineTransformRotate(photo1.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(rotations[0]),
-                r2Max: 0) * CGFloat(M_PI / 180))
-        
-        // PHOTO 2
-        
-        // position
-        photo2.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(xOffsets[1]),
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(yOffsets[1]),
-                r2Max: 0))
-        
-        // scale
-        photo2.transform = CGAffineTransformScale(photo2.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[1]),
-                r2Max: 1),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[1]),
-                r2Max: 1))
-        
-        // rotation
-        photo2.transform = CGAffineTransformRotate(photo2.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(rotations[1]),
-                r2Max: 0) * CGFloat(M_PI / 180))
-
-        // PHOTO 3
-        
-        // position
-        photo3.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(xOffsets[2]),
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(yOffsets[2]),
-                r2Max: 0))
-        
-        // scale
-        photo3.transform = CGAffineTransformScale(photo3.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[2]),
-                r2Max: 1),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[2]),
-                r2Max: 1))
-        
-        // rotation
-        photo3.transform = CGAffineTransformRotate(photo3.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(rotations[2]),
-                r2Max: 0) * CGFloat(M_PI / 180))
-        
-        // PHOTO 4
-        
-        // position
-        photo4.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(xOffsets[3]),
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(yOffsets[3]),
-                r2Max: 0))
-        
-        // scale
-        photo4.transform = CGAffineTransformScale(photo4.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[3]),
-                r2Max: 1),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[3]),
-                r2Max: 1))
-        
-        // rotation
-        photo4.transform = CGAffineTransformRotate(photo4.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(rotations[3]),
-                r2Max: 0) * CGFloat(M_PI / 180))
-        
-        // PHOTO 5
-        
-        // position
-        photo5.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(xOffsets[4]),
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(yOffsets[4]),
-                r2Max: 0))
-        
-        // scale
-        photo5.transform = CGAffineTransformScale(photo5.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[4]),
-                r2Max: 1),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[4]),
-                r2Max: 1))
-        
-        // rotation
-        photo5.transform = CGAffineTransformRotate(photo5.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(rotations[4]),
-                r2Max: 0) * CGFloat(M_PI / 180))
-        
-        // PHOTO 6
-        
-        // position
-        photo6.transform = CGAffineTransformMakeTranslation(
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(xOffsets[5]),
-                r2Max: 0),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(yOffsets[5]),
-                r2Max: 0))
-        
-        // scale
-        photo6.transform = CGAffineTransformScale(photo6.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[5]),
-                r2Max: 1),
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(scales[5]),
-                r2Max: 1))
-        
-        // rotation
-        photo6.transform = CGAffineTransformRotate(photo6.transform,
-            convertValue(scrollView.contentOffset.y,
-                r1Min: scrollMin,
-                r1Max: scrollMax,
-                r2Min: CGFloat(rotations[5]),
-                r2Max: 0) * CGFloat(M_PI / 180))
-        
     }
     
 }
