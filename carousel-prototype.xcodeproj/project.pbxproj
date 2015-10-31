@@ -10,6 +10,7 @@
 		CA0E560D1BE54CC2008C4366 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E560C1BE54CC2008C4366 /* TimelineViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CA0E560F1BE54FF8008C4366 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E560E1BE54FF8008C4366 /* ConversationsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CA0E56111BE55002008C4366 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E56101BE55002008C4366 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		CA0E56131BE5670F008C4366 /* LearnMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0E56121BE5670F008C4366 /* LearnMoreViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CA3A184C1BE3C23C003DE8A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A184B1BE3C23C003DE8A7 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CA3A184E1BE3C244003DE8A7 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3A184D1BE3C244003DE8A7 /* Common.swift */; settings = {ASSET_TAGS = (); }; };
 		CA4760061BE53EEB0025EFB2 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4760051BE53EEB0025EFB2 /* TutorialViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -25,6 +26,7 @@
 		CA0E560C1BE54CC2008C4366 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		CA0E560E1BE54FF8008C4366 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		CA0E56101BE55002008C4366 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CA0E56121BE5670F008C4366 /* LearnMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnMoreViewController.swift; sourceTree = "<group>"; };
 		CA3A184B1BE3C23C003DE8A7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CA3A184D1BE3C244003DE8A7 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		CA4760051BE53EEB0025EFB2 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				CA4EA6491BE061BC005792C3 /* AppDelegate.swift */,
 				CA4EA64B1BE061BC005792C3 /* ViewController.swift */,
 				CA4EA64D1BE061BC005792C3 /* Main.storyboard */,
+				CA0E56121BE5670F008C4366 /* LearnMoreViewController.swift */,
 				CA0E560E1BE54FF8008C4366 /* ConversationsViewController.swift */,
 				CA0E56101BE55002008C4366 /* SettingsViewController.swift */,
 				CA0E560C1BE54CC2008C4366 /* TimelineViewController.swift */,
@@ -158,6 +161,7 @@
 			files = (
 				CA3A184C1BE3C23C003DE8A7 /* LoginViewController.swift in Sources */,
 				CA4EA64C1BE061BC005792C3 /* ViewController.swift in Sources */,
+				CA0E56131BE5670F008C4366 /* LearnMoreViewController.swift in Sources */,
 				CA4EA64A1BE061BC005792C3 /* AppDelegate.swift in Sources */,
 				CA0E560F1BE54FF8008C4366 /* ConversationsViewController.swift in Sources */,
 				CAF76F711BE0645E00E7F381 /* IntroViewController.swift in Sources */,
