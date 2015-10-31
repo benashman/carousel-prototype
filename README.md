@@ -1,4 +1,4 @@
-# Dropbox Prototype
+# Carousel Prototype
 
 Time spent: ~6 hours
 
