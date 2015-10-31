@@ -38,3 +38,7 @@ Time spent: ~10 hours
 ### Learn more about Carousel
   * [x] Show the "Learn more about Carousel" button in the photo timeline.
   * [x] Dismiss Learn More screen
+
+## Walkthrough
+
+![Walkthrough](demo.gif)
