@@ -46,9 +46,21 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         let xOffsets : [Float] = [-65, 95, -105, 40, 0, -120]
         let scales   : [Float] = [1, 1.65, 1.9, 1.6, 2, 1.65]
         let rotations: [Float] = [-10, 10, 10, -10, 10, -10]
+
+        let scrollOffset = Float(scrollView.contentOffset.y)
+        let scrollOffsetMax = Float(573.0)
+        let scrollOffsetMin = Float(-25.0)
         
-        let scrollProgress = convertValue(scrollView.contentOffset.y, r1Min: -20, r1Max: 568, r2Min: 0, r2Max: 1)
-        print(scrollProgress)
+        // Cap scroll offset
+        var cappedOffset = scrollOffset
+
+        if scrollOffset < scrollOffsetMin {
+            cappedOffset = scrollOffsetMin
+        } else if scrollOffset > scrollOffsetMax {
+            cappedOffset = scrollOffsetMax
+        } else {
+            cappedOffset = scrollOffset
+        }
         
         let scrollMin = CGFloat(-20)
         let scrollMax = CGFloat(568)
@@ -56,31 +68,31 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         // Transform photos
         for (i, photo) in photos.enumerate() {
             photo.transform = CGAffineTransformMakeTranslation(
-                convertValue(scrollView.contentOffset.y,
+                convertValue(CGFloat(cappedOffset),
                     r1Min: scrollMin,
                     r1Max: scrollMax,
                     r2Min: CGFloat(xOffsets[i]),
                     r2Max: 0),
-                convertValue(scrollView.contentOffset.y,
+                convertValue(CGFloat(cappedOffset),
                     r1Min: scrollMin,
                     r1Max: scrollMax,
                     r2Min: CGFloat(yOffsets[i]),
                     r2Max: 0))
             
             photo.transform = CGAffineTransformScale(photo.transform,
-                convertValue(scrollView.contentOffset.y,
+                convertValue(CGFloat(cappedOffset),
                     r1Min: scrollMin,
                     r1Max: scrollMax,
                     r2Min: CGFloat(scales[i]),
                     r2Max: 1),
-                convertValue(scrollView.contentOffset.y,
+                convertValue(CGFloat(cappedOffset),
                     r1Min: scrollMin,
                     r1Max: scrollMax,
                     r2Min: CGFloat(scales[i]),
                     r2Max: 1))
             
             photo.transform = CGAffineTransformRotate(photo.transform,
-                convertValue(scrollView.contentOffset.y,
+                convertValue(CGFloat(cappedOffset),
                     r1Min: scrollMin,
                     r1Max: scrollMax,
                     r2Min: CGFloat(rotations[i]),
